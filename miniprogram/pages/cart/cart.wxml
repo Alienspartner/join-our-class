@@ -1,0 +1,78 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Collection</view>
+        <view class="page__desc">收藏</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程数量</view>
+                    <view class="weui-form-preview__value_in-hd">{{cart.length}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程详情</view>
+                    <view class="weui-form-preview__value">请到课程所在地址询问</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">操作提示</view>
+                    <view class="weui-form-preview__value">下拉即可刷新收藏列表</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+                 <button class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="confirmEmpty" type="warn">清空收藏</button>
+            </view>
+        </view>
+        <view class="weui-form-preview" wx:for="{{cart}}" wx:for-item="merchandise" wx:key="_id">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">所需智力</view>
+                <view class="weui-form-preview__value_in-hd">{{merchandise.price}}</view>
+            </view>
+          <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程年级</view>
+                    <view class="weui-form-preview__value">{{merchandise.grade}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程科目</view>
+                    <view class="weui-form-preview__value">{{merchandise.subject}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程主题</view>
+                    <view class="weui-form-preview__value">{{merchandise.theme}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">开课日期</view>
+                    <view class="weui-form-preview__value">{{merchandise.startDate}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">结课日期</view>
+                    <view class="weui-form-preview__value">{{merchandise.endDate}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">上课时间</view>
+                    <view class="weui-form-preview__value">{{merchandise.time}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">所在地区</view>
+                    <view class="weui-form-preview__value">{{merchandise.area[0]}}/{{merchandise.area[1]}}/{{merchandise.area[2]}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">详细地址</view>
+                    <view class="weui-form-preview__value">{{merchandise.address}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+            <button class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="route" data-id="{{merchandise.classroomId}}" data-latitude="{{merchandise.latitude}}" data-longitude="{{merchandise.longitude}}" type="default">规划路线</button>
+                <button data-merchandise="{{merchandise}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" type="primary" bindtap="pay">学习课程</button>
+                <button data-course="{{merchandise}}" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="confirmRemove" type="warn">移除课程</button>
+            </view>
+        </view>
+    </view>
+    <view class="page__ft">
+        <image src="/images/top.png" style="width: 30px; height: 19px;" hidden='{{!floorstatus}}' bindtap="goTop"></image>
+        <view class="weui-form__tips" hidden='{{!floorstatus}}'>返回顶部</view>
+    </view>
+</view>

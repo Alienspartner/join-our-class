@@ -1,0 +1,8 @@
+<view class="page">
+    <view class="weui-form">
+      <view class="weui-form__text-area">
+        <view class="weui-form__title">Subway</view>
+        <view class="weui-form__desc">地铁</view>
+      </view>
+ </view>
+</view>

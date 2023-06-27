@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wux-keyboard": "../../components/keyboard/index"
+  }
+}

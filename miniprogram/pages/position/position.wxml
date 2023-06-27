@@ -1,0 +1,49 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Location</view>
+        <view class="page__desc">获取当前经纬度以及其他信息，需要用户授权小程序访问您当前位置</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">Positioning Accuracy</view>
+                    <view class="weui-form-preview__value_in-hd">High</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">Latitude</view>
+                    <view class="weui-form-preview__value">{{latitude}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">Longitude</view>
+                    <view class="weui-form-preview__value">{{longitude}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">speed/m/s</view>
+                    <view class="weui-form-preview__value">{{speed}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">Altitude/m</view>
+                    <view class="weui-form-preview__value">{{altitude}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">Accuracy</view>
+                    <view class="weui-form-preview__value">{{accuracy}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">HorizontalAccuracy/m</view>
+                    <view class="weui-form-preview__value">{{horizontalAccuracy}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">VerticalAccuracy/m</view>
+                    <view class="weui-form-preview__value">{{verticalAccuracy}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+                <button class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" type="primary" bindtap="getLocation">获取定位</button>
+            </view>
+        </view>
+    </view>
+</view>

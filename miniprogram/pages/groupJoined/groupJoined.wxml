@@ -1,0 +1,82 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Group I Joined</view>
+        <view class="page__desc">我参与的团队</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">团队总数</view>
+                    <view class="weui-form-preview__value_in-hd">{{group_num}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">互帮互助</view>
+                    <view class="weui-form-preview__value">扩建团队可以帮助队友哦</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">操作提示</view>
+                    <view class="weui-form-preview__value">下拉即可刷新团队列表</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+                <button class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" type="default" bindtap="toCourse">发现更多课程</button>
+            </view>
+        </view>
+        <view class="weui-form-preview" wx:for="{{group}}" wx:for-item="myGroup" wx:key="_id">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">所需智力</view>
+                <view class="weui-form-preview__value_in-hd">{{myGroup.priceNow}}</view>
+            </view>
+          <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">原始智力</view>
+                    <view class="weui-form-preview__value">{{myGroup.price}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">当前人数</view>
+                    <view class="weui-form-preview__value">{{myGroup.count}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程科目</view>
+                    <view class="weui-form-preview__value">{{myGroup.subject}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程主题</view>
+                    <view class="weui-form-preview__value">{{myGroup.theme}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程年级</view>
+                    <view class="weui-form-preview__value">{{myGroup.grade}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">开课日期</view>
+                    <view class="weui-form-preview__value">{{myGroup.startDate}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">结课日期</view>
+                    <view class="weui-form-preview__value">{{myGroup.endDate}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">上课时间</view>
+                    <view class="weui-form-preview__value">{{myGroup.time}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">详细地址</view>
+                    <view class="weui-form-preview__value">{{myGroup.address}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+            <button class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="route" data-id="{{myGroup.classroomId}}" data-latitude="{{myGroup.latitude}}" data-longitude="{{myGroup.longitude}}" type="default">规划路线</button>
+                <button data-id="{{merchandise._id}}" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" data-info="{{myGroup}}" open-type="share" type="primary">扩建团队</button>
+                <button class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" type="warn" data-merchandise="{{myGroup}}" bindtap="pay">学习课程</button>
+            </view>
+        </view>
+    </view>
+    <view class="page__ft">
+        <image src="/images/top.png" style="width: 30px; height: 19px;" hidden='{{!floorstatus}}' bindtap="goTop"></image>
+        <view class="weui-form__tips" hidden='{{!floorstatus}}'>返回顶部</view>
+    </view>
+</view>

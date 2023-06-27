@@ -1,0 +1,55 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Course Group</view>
+        <view class="page__desc">课程组团</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">好友邀请你参加课程组团，大家一起享优惠哦！</view>
+            <view class="weui-article__section">
+                <view class="weui-article__h2">课程信息</view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">课程科目</view>
+                    <view class="weui-article__p">{{info[7]}}</view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">课程主题</view>
+                    <view class="weui-article__p">{{info[8]}}</view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">课程年级</view>
+                    <view class="weui-article__p">{{info[4]}}</view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">开课日期</view>
+                    <view class="weui-article__p">{{info[6]}}</view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">结课日期</view>
+                    <view class="weui-article__p">{{info[3]}}</view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">上课时间</view>
+                    <view class="weui-article__p">{{info[9]}}</view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">详细地址</view>
+                    <view class="weui-article__p">{{info[2]}}</view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">所需智力</view>
+                    <view class="weui-article__p">{{info[5]}}</view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">温馨提示</view>
+                    <view class="weui-article__p">参团人数达4人但小于8人可享九折优惠，参团人数达8人可享八五折优惠</view>
+                </view>
+            </view>
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="primary" bindtap="agree">参加团队</button>
+                <button class="weui-btn" type="default" bindtap="deny">不予理会</button>
+            </view>
+        </view>
+    </view>
+</view>
+
